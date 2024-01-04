@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<style>
+    /* P{
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 27px;
+    }
+    h1{
+        padding-left: 100px;
+    } */
+    div{
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 27px;
+        /* background-color: black; */
+        /* color: white; */
+
+    }
+    /* #p1{
+        dir="rtl"
+    } */
+
+</style>
 <body>
-    <strong>
+    <div>
+    <h1>What is the difference between Semaphore and Mutex and in what situations are each used?</h1>
+    <p>
         Semaphore and mutex are both synchronization mechanisms used in concurrent programming to control access to shared resources. <br>
 
         A mutex (short for mutual exclusion) is a locking mechanism that allows only one thread to access a resource at a time. It provides exclusive access and is typically used to protect critical sections of code or shared data structures. When a thread acquires the mutex, it can proceed with the critical section, and when it releases the mutex, another thread can acquire it and proceed. <br>
@@ -14,7 +39,64 @@
         On the other hand, a semaphore is a generalized version of a mutex that can allow multiple threads to access a resource, up to a specified limit. Semaphores can be used to control access to a pool of resources, for example, limiting the number of simultaneous connections to a database or the number of threads that can access a file. <br>
 
         In summary, a mutex provides exclusive access to a resource by allowing only one thread at a time, while a semaphore allows multiple threads to access a resource, up to a specified limit. The choice between the two depends on the specific requirements of the concurrent program and the type of resource being protected. <br>
-    </strong>
+        
+    </p>
+    <p id="p1" dir="rtl">Semaphore و mutex هر دو مکانیسم های همگام سازی هستند که در برنامه نویسی همزمان برای کنترل دسترسی به منابع مشترک استفاده می شوند.
+
+        mutex (مخفف عبارت mutex exclusion) مکانیزم قفلی است که تنها به یک رشته اجازه می‌دهد در یک زمان به یک منبع دسترسی داشته باشد. این دسترسی انحصاری را فراهم می کند و معمولاً برای محافظت از بخش های مهم کد یا ساختارهای داده مشترک استفاده می شود. هنگامی که یک نخ mutex را بدست می آورد، می تواند با بخش بحرانی ادامه دهد و هنگامی که mutex را آزاد می کند، یک نخ دیگر می تواند آن را بدست آورد و ادامه دهد.
+        
+        از سوی دیگر، سمافور یک نسخه تعمیم‌یافته از یک mutex است که می‌تواند به چندین رشته اجازه دهد تا به یک منبع، حداکثر تا یک حد مشخص، دسترسی داشته باشند. سمافورها را می توان برای کنترل دسترسی به مجموعه ای از منابع استفاده کرد، به عنوان مثال، محدود کردن تعداد اتصالات همزمان به یک پایگاه داده یا تعداد رشته هایی که می توانند به یک فایل دسترسی داشته باشند.
+        
+        به طور خلاصه، یک mutex با اجازه دادن تنها به یک رشته در یک زمان، دسترسی انحصاری به یک منبع را فراهم می کند، در حالی که یک سمافور به چندین رشته اجازه می دهد تا به یک منبع، حداکثر تا یک حد مشخص، دسترسی داشته باشند. انتخاب بین این دو بستگی به الزامات خاص برنامه همزمان و نوع منبع محافظت شده دارد.
+        <br>
+        <hr>
+    </p>
+</div>
     
+
+
+<!-- 2 -->
+<div>
+    <h1>How can a deadlock occur in a multi-threaded program and how can it be avoided?</h1>
+    <p>
+        Deadlock in a multi-threaded program occurs when two or more threads are blocked, each waiting for the other to release a resource, resulting in a situation where no progress can be made. Deadlocks typically occur due to a combination of four conditions: <br>
+
+        1. Mutual Exclusion: Resources cannot be shared; only one thread can exclusively hold a resource at a time. <br>
+        2. Hold and Wait: Threads hold resources while waiting for others. <br>
+        3. No Preemption: Resources cannot be forcibly taken from the threads holding them. <br>
+        4. Circular Wait: There is a circular chain of two or more threads each waiting for a resource held by the next thread in the chain. <br>
+        
+        To avoid deadlocks, several strategies can be employed:<br>
+        
+        1. Avoidance: Use careful resource allocation and ordering to ensure that circular wait conditions cannot occur.<br>
+        2. Detection and Recovery: Implement timeout mechanisms or resource-reclamation policies to break deadlocks when they occur.<br>
+        3. Prevention: Allow preemption of resources from threads to prevent deadlocks from occurring.<br>
+        4. Resource ordering: Establish a strict ordering of resource requests, ensuring that threads always request resources in the same order to prevent circular waits.<br>
+        
+        By applying these strategies and designing concurrent programs with careful consideration of resource interactions, deadlocks can be alleviated or prevented.<br>
+        
+    </p>
+    <p id="p1" dir="rtl">بن بست در یک برنامه چند رشته ای زمانی اتفاق می افتد که دو یا چند رشته مسدود می شوند و هر کدام منتظر دیگری هستند تا منبعی را آزاد کنند و در نتیجه وضعیتی ایجاد می شود که هیچ پیشرفتی حاصل نمی شود. بن بست ها معمولاً به دلیل ترکیبی از چهار شرایط رخ می دهند:
+
+        1. طرد متقابل: منابع را نمی توان به اشتراک گذاشت. فقط یک رشته می تواند به طور انحصاری یک منبع را در یک زمان نگه دارد.
+        2. نگه دارید و صبر کنید: موضوعات منابع را در حالی که منتظر دیگران هستند نگه می دارند.
+        3. بدون پیش‌پرداخت: منابع را نمی‌توان به زور از رشته‌هایی که آن‌ها را نگه می‌دارند برداشت کرد.
+        4. انتظار دایره ای: یک زنجیره دایره ای از دو یا چند رشته وجود دارد که هر کدام منتظر منبعی هستند که توسط رشته بعدی در زنجیره نگهداری می شود.
+        
+        برای جلوگیری از بن بست می توان از چندین استراتژی استفاده کرد:
+        
+        1. اجتناب: از تخصیص و سفارش دقیق منابع استفاده کنید تا اطمینان حاصل کنید که شرایط انتظار دایره ای نمی تواند رخ دهد.
+        2. شناسایی و بازیابی: مکانیسم‌های مهلت زمانی یا سیاست‌های احیای منابع را برای شکستن بن‌بست‌ها در صورت وقوع اجرا کنید.
+        3. Prevention: برای جلوگیری از وقوع بن بست ها، امکان پیش گیری منابع از thread ها را فراهم کنید.
+        4. ترتیب منابع: ترتیب دقیق درخواست های منابع را ایجاد کنید، و اطمینان حاصل کنید که رشته ها همیشه منابع را به همان ترتیب درخواست می کنند تا از انتظارهای دایره ای جلوگیری شود.
+        
+        با به کارگیری این استراتژی ها و طراحی برنامه های همزمان با در نظر گرفتن دقیق تعاملات منابع می توان بن بست ها را کاهش داد یا از آن جلوگیری کرد.
+        <br>
+        <hr>
+    </p>
+</div>
+
+
+
 </body>
 </html>
