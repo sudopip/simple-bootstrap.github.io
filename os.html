@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Semaphore and mutex are both synchronization mechanisms used in concurrent programming to control access to shared resources. 
+
+        A mutex (short for mutual exclusion) is a locking mechanism that allows only one thread to access a resource at a time. It provides exclusive access and is typically used to protect critical sections of code or shared data structures. When a thread acquires the mutex, it can proceed with the critical section, and when it releases the mutex, another thread can acquire it and proceed.
+
+        On the other hand, a semaphore is a generalized version of a mutex that can allow multiple threads to access a resource, up to a specified limit. Semaphores can be used to control access to a pool of resources, for example, limiting the number of simultaneous connections to a database or the number of threads that can access a file. 
+
+        In summary, a mutex provides exclusive access to a resource by allowing only one thread at a time, while a semaphore allows multiple threads to access a resource, up to a specified limit. The choice between the two depends on the specific requirements of the concurrent program and the type of resource being protected.
+    </p>
+    
+</body>
+</html>
